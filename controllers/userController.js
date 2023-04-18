@@ -20,7 +20,7 @@ const userController = {
   getUserById({ params }, res) {
     Users.findOne({ _id: params.id })
       .populate({
-        path: 'thoughts',
+        path: 'thought',
         select: '-__v',
       })
       .populate({
@@ -77,7 +77,7 @@ const userController = {
           return res.status(404).json({ message: 'User not found!' });
         }
 
-        return Thought.deleteMany({ _id: { $in: userData.thoughts } });
+        return Thought.deleteMany({ _id: { $in: userData.thought } });
       })
       .then(() => {
         res.json({ message: 'User has been deleted!' });
