@@ -14,11 +14,11 @@ const usersSchema = new mongoose.Schema({
       match: [/.+\@.+\..+/] 
       },
   thought: [{ 
-      type: Schema.Types.ObjectId, 
+      type: mongoose.Schema.Types.ObjectId, 
       ref: 'thought' 
       }],
   friends: [{ 
-      type: Schema.Types.ObjectId, 
+      type: mongoose.Schema.Types.ObjectId, 
       ref: 'user' 
       }],
   },
