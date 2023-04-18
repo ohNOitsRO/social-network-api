@@ -14,21 +14,15 @@ A back-end social network API using a MongoDB database in order to use a substan
 ## Installation
 
 Install the node packages with "npm i" within the application directory.  
-Install the mySQL package in order to connect to the database with "npm i mysql2".  
-Install the sequelize package to connect express to the mySQL database with "npm i sequelize".  
-Install the dot.env package in order to hide important credentials needed to login to the mySQL database with "npm i dotenv".  
-Install the Insomnia API platform to check your API route requests from: https://insomnia.rest/
+This will install the necessary Express, MongoDB, and Mongoose packages.  
 
-Open up your mySQL Terminal and run "mysql -u root -p" to have the database start listening.  
-Then run "source db/schema.sql" to create the database, followed by "use ecommerce_db" to set the database.  
+Install the Insomnia API platform to check your API route requests from: https://insomnia.rest/  
 
-After in your Gitbash Terminal then run "npm run seed" to seed data into the newly created database tables.
-Finally run "node server.js" to launch the sequelize connection and be able check your API routes in Insomnia.
-
-
-Run the application with "node server.js" in the terminal command line and follow the prompts!  
+Run "npm start" to start the connection to the MongoDB and be able check your API routes in Insomnia.  
 
 ## Usage
+
+You can GET, POST, PUT, and DELETE Users, Thoughts, and Reactions within Insomnia for this Social Network API.
 
 ### Link to video demo of application.
 
