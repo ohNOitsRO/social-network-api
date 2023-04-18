@@ -44,7 +44,7 @@ const thoughtController = {
             .then(({ _id }) => {
                 return Users.findOneAndUpdate(
                     { _id: body.userId },
-                    { $push: { thoughts: _id } },
+                    { $push: { thought: _id } },
                     { new: true }
                 );
             })
@@ -89,7 +89,7 @@ const thoughtController = {
                 }
                 return Users.findOneAndUpdate(
                     { _id: params.userId },
-                    { $pull: { thoughts: params.Id } },
+                    { $pull: { thought: params.Id } },
                     { new: true }
                 )
             })
@@ -135,7 +135,7 @@ const thoughtController = {
                 if (!thoughtData) {
                     return res.status(404).json({ message: 'No thoughts found!' });
                 }
-                
+
                 res.json(thoughtData);
             })
             .catch(err => {
