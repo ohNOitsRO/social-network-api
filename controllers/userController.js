@@ -58,8 +58,7 @@ const userController = {
       { new: true, runValidators: true, })
       .then((userData) => {
         if (!userData) {
-          res.status(404).json({ message: 'User not found!' });
-          return;
+          return res.status(404).json({ message: 'User not found!' });
         }
 
         res.json(userData);
@@ -108,7 +107,6 @@ const userController = {
         res.sendStatus(400);
       });
   },
-
 
   removeFriend({ params }, res) {
     User.findOneAndUpdate(

@@ -27,8 +27,7 @@ const thoughtController = {
             .sort({ _id: -1 })
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'No thoughts found!' });
-                    return;
+                    return res.status(404).json({ message: 'No thoughts found!' });
                 }
 
                 res.json(thoughtData);
@@ -51,8 +50,7 @@ const thoughtController = {
             })
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'User not found!' });
-                    return;
+                    return res.status(404).json({ message: 'User not found!' });
                 }
 
                 res.json(thoughtData);
@@ -71,8 +69,7 @@ const thoughtController = {
             { new: true, runValidators: true })
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'No thoughts found!' });
-                    return;
+                    return res.status(404).json({ message: 'No thoughts found!' });
                 }
 
                 res.json(thoughtData);
@@ -88,8 +85,7 @@ const thoughtController = {
         Thought.findOneAndDelete({ _id: params.id })
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'No thoughts found!' });
-                    return;
+                    return res.status(404).json({ message: 'No thoughts found!' });
                 }
                 return User.findOneAndUpdate(
                     { _id: params.userId },
@@ -99,8 +95,7 @@ const thoughtController = {
             })
             .then(userData => {
                 if (!userData) {
-                    res.status(404).json({ message: 'User not found!' });
-                    return;
+                    return res.status(404).json({ message: 'User not found!' });
                 }
 
                 res.json(userData);
@@ -120,8 +115,7 @@ const thoughtController = {
             .select('-__v')
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'No thoughts found!' });
-                    return;
+                    return res.status(404).json({ message: 'No thoughts found!' });
                 }
 
                 res.json(thoughtData);
@@ -139,8 +133,7 @@ const thoughtController = {
             { new: true })
             .then(thoughtData => {
                 if (!thoughtData) {
-                    res.status(404).json({ message: 'No thoughts found!' });
-                    return;
+                    return res.status(404).json({ message: 'No thoughts found!' });
                 }
                 res.json(thoughtData);
             })
