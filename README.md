@@ -34,11 +34,14 @@ You can GET, POST, PUT, and DELETE Users, Thoughts, and Reactions within Insomni
 MongoDB for its Database management.  
 https://www.mongodb.com/
 
-Node.js for its CLI capabilities.
+Mongoose for its object modeling.  
+https://mongoosejs.com/
+
+Node.js for its CLI capabilities.  
 https://nodejs.org/en/
 
-Express for its routing and web framework.
-https://sequelize.org/
+Express for its routing and web framework.  
+https://expressjs.com/
 
 ## License
 
