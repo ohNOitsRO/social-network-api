@@ -16,7 +16,7 @@ const thoughtController = {
                 res.sendStatus(400);
             });
     },
-    
+
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
             .populate({
@@ -27,11 +27,11 @@ const thoughtController = {
             .sort({ _id: -1 })
             .then(thoughtData => {
                 if (!thoughtData) {
-                res.status(404).json({ message: 'No thoughts found!' });
-                return;
-            }
+                    res.status(404).json({ message: 'No thoughts found!' });
+                    return;
+                }
 
-            res.json(thoughtData);
+                res.json(thoughtData);
 
             })
             .catch(err => {
@@ -44,18 +44,18 @@ const thoughtController = {
         Thought.create(body)
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
-                { _id: body.userId },
-                { $push: { thoughts: _id } },
-                { new: true }
-            );
+                    { _id: body.userId },
+                    { $push: { thoughts: _id } },
+                    { new: true }
+                );
             })
             .then(thoughtData => {
                 if (!thoughtData) {
                     res.status(404).json({ message: 'User not found!' });
                     return;
-            }
+                }
 
-            res.json(thoughtData);
+                res.json(thoughtData);
 
             })
             .catch(err => {
@@ -66,16 +66,16 @@ const thoughtController = {
 
     updateThought({ params, body }, res) {
         Thought.findOneAndUpdate(
-            { _id: params.id }, 
-            body, 
+            { _id: params.id },
+            body,
             { new: true, runValidators: true })
             .then(thoughtData => {
                 if (!thoughtData) {
                     res.status(404).json({ message: 'No thoughts found!' });
-                    return; 
-            }
-                
-            res.json(thoughtData);
+                    return;
+                }
+
+                res.json(thoughtData);
 
             })
             .catch(err => {
@@ -83,7 +83,7 @@ const thoughtController = {
                 res.sendStatus(400);
             })
     },
-    
+
     deleteThought({ params }, res) {
         Thought.findOneAndDelete({ _id: params.id })
             .then(thoughtData => {
@@ -110,11 +110,11 @@ const thoughtController = {
                 res.sendStatus(400);
             })
     },
-        
+
     createReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
-            { _id: params.thoughtId }, 
-            { $push: { reactions: body } }, 
+            { _id: params.thoughtId },
+            { $push: { reactions: body } },
             { new: true, runValidators: true })
             .populate({ path: 'reactions', select: '-__v' })
             .select('-__v')
