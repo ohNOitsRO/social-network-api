@@ -135,6 +135,7 @@ const thoughtController = {
                 if (!thoughtData) {
                     return res.status(404).json({ message: 'No thoughts found!' });
                 }
+                
                 res.json(thoughtData);
             })
             .catch(err => {
