@@ -25,7 +25,7 @@ const reactionSchema = new mongoose.Schema({
       },
       id: false,
     }
-  );
+);
 
 const thoughtSchema = new mongoose.Schema({
     thoughtText: { 
@@ -40,7 +40,7 @@ const thoughtSchema = new mongoose.Schema({
         },
     username: [{ 
         type: String, 
-        ref: 'thought' 
+        ref: 'Thought' 
         }],
     reactions: [ 
         reactionSchema 
@@ -56,7 +56,7 @@ const thoughtSchema = new mongoose.Schema({
 
 thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
-  });
+});
 
 const Thought = mongoose.model('Thought', thoughtSchema);
 
