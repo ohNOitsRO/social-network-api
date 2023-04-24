@@ -38,10 +38,10 @@ const thoughtSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
         },
-    username: [{ 
+    username: { 
         type: String, 
         ref: 'Thought' 
-        }],
+        },
     reactions: [ 
         reactionSchema 
         ]
